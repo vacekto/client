@@ -1,2 +1,1 @@
-export type TBoardSquareValue = 'X' | 'O' | null
-
+export type TTicTacToeSquareValue = 'X' | 'O' | null

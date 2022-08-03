@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import './Board.css'
-import { TBoardSquareValue } from '../util/types'
+import { TTicTacToeSquareValue } from '../util/types'
 
 interface IBoardProps {
   size: number
 }
 
-const Board: React.FunctionComponent<IBoardProps> = (props) => {
+const Board: React.FC<IBoardProps> = (props) => {
   const initBoard = Array(props.size).fill(Array(props.size).fill(null))
   const [boardState, setBoardState] = useState(initBoard)
   const [isPlaying, setIsPlaying] = useState<'X' | 'O'>('X')
@@ -25,9 +25,9 @@ const Board: React.FunctionComponent<IBoardProps> = (props) => {
   }
 
   const renderBoard = () => {
-    return boardState.map((row: TBoardSquareValue[], x: number) => {
+    return boardState.map((row: TTicTacToeSquareValue[], x: number) => {
       return <div className="row" key={x}>
-        {row.map((value: TBoardSquareValue, y: number) => {
+        {row.map((value: TTicTacToeSquareValue, y: number) => {
           return <div
             key={y}
             className='boardSquare'
